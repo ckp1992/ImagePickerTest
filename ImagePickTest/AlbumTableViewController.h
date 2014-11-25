@@ -11,7 +11,5 @@
 
 @interface AlbumTableViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, retain) NSMutableArray *assetsGroups;
-@property int assetsCount;
-//@property (nonatomic, retain) ALAssetsGroup *assetsGroups;
 @property (nonatomic, retain) ALAssetsLibrary *assetsLibrary;
 @end

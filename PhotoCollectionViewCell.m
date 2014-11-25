@@ -21,9 +21,7 @@
     UIImage* image = [UIImage imageWithCGImage:thum];
     photoImage.image = image;
 }
--(UIImage*)getImageData{
-    return photoImage.image;
-}
+
 -(void)selectState{
     photoImage.alpha = 0.4;
     selectImage.hidden = NO;

@@ -78,7 +78,6 @@ static NSString * const reuseIdentifier = @"PhotoCollectionViewCell";
 -(void)setAssetsGroup:(ALAssetsGroup *)assetsGroup{
     _assetsGroup = assetsGroup;
     [self reloadData];
-    //NSLog(@"------>>>>>>.%@",assetsGroup);
 }
 
 - (void)reloadData
@@ -89,9 +88,7 @@ static NSString * const reuseIdentifier = @"PhotoCollectionViewCell";
             [self.assets addObject:result];
             [self.collectionView reloadData];
         }
-        
     }];
-
 }
 
 
@@ -145,16 +142,11 @@ static NSString * const reuseIdentifier = @"PhotoCollectionViewCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
     PhotoCollectionViewCell *cell = (PhotoCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-//    cell.alpha = 0.4;
     [cell selectState];
-
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     PhotoCollectionViewCell *cell = (PhotoCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-//    cell.alpha = 1;
-    
     [cell deselectState];
 }
 

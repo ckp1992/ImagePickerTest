@@ -24,15 +24,10 @@
     self.assetsLibrary = [[ALAssetsLibrary alloc] init];
     self.assetsGroups = [NSMutableArray new];
     
-    [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
-    [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
-    [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
-    
     void (^assetsGroupsEnumerationBlock)(ALAssetsGroup *, BOOL *) = ^(ALAssetsGroup *assetsGroup, BOOL *stop) {
-                if(assetsGroup) {
+        if(assetsGroup) {
             [assetsGroup setAssetsFilter:[ALAssetsFilter allPhotos]];
-//            [assetsGroup setAssetsFilter:[ALAssetsFilter allAssets]];
-            _assetsCount = assetsGroup.numberOfAssets;
+
             if(assetsGroup.numberOfAssets > 0) {
                 NSLog(@"assetsGroup--->>%@",assetsGroup);
                 [self.assetsGroups addObject:assetsGroup];
@@ -76,7 +71,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.assetsGroups.count;
-    //return 11;
 }
 
 

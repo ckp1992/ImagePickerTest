@@ -14,7 +14,6 @@
     __weak IBOutlet UIImageView *selectImage;
 }
 -(void)setData:(ALAsset *)asset;
--(UIImage*)getImageData;
 -(void)selectState;
 -(void)deselectState;
 @end
